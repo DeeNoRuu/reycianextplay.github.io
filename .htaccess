@@ -1,0 +1,15 @@
+# Offline cache MIME type for Apache hosts.
+<IfModule mod_mime.c>
+  AddType text/cache-manifest .manifest
+  AddType application/octet-stream .bin .elf
+</IfModule>
+# Reduce transfer size when Apache supports mod_deflate. The browser decodes
+# the response transparently; the payload bytes on disk are unchanged.
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/javascript application/javascript application/json image/svg+xml application/octet-stream text/cache-manifest
+</IfModule>
+<IfModule mod_headers.c>
+  <FilesMatch "\.manifest$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>

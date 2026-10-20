@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id" manifest="cache.manifest">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0D5AA4">
+<title>HEN All Firmware | Reycia Nextplay</title>
+<link rel="icon" href="assets/reycia-logo-small.png" type="image/png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body><div class="food-background" id="food-background" aria-hidden="true"></div><script src="food-background.js"></script><a class="skip-link" href="#main-content">Lewati ke konten</a><div class="shell">
+<header class="brandbar">
+<a class="brand" href="index.html" aria-label="Reycia Nextplay — HEN All Firmware">
+<span class="brand-mark"><img src="assets/reycia-logo.png" width="512" height="512" alt="Logo Reycia Nextplay"></span>
+<span class="brand-copy">reycia<br>nextplay<span>.</span></span>
+</a><span class="console-label">PLAYSTATION 4 / CONSOLE HOST</span>
+<a class="header-link" href="#hen-installation"><span class="header-arrow" aria-hidden="true">↓</span>HEN All Firmware</a>
+</header>
+<main id="main-content" tabindex="-1">
+<section class="hero" aria-labelledby="hero-heading">
+<div class="hero-copy"><p class="eyebrow"><span class="pixel-mark" aria-hidden="true"></span>GOOD GAMES. GREAT COMPANY.</p>
+<h1 id="hero-heading">Main seru.<br>Ngumpul <em>asik.</em></h1>
+<p class="intro">Satu tempat, banyak cara buat seru-seruan.<br>Siapkan game, camilan, dan teman mainmu.</p>
+<a class="action" href="#hen-installation">Lihat status HEN <span class="arrow" aria-hidden="true">↗</span></a>
+</div>
+<figure class="hero-visual"><img src="assets/reycia-play.svg" width="960" height="432" alt="Ilustrasi controller PlayStation, boardgame, burger, pizza, dan minuman dengan palet biru, kuning, dan merah."></figure>
+</section>
+<section class="status-strip" id="hen-installation" aria-label="Status HEN All Firmware" tabindex="-1">
+<script>
+var uaFull = navigator.userAgent;
+var match = uaFull.match(/PlayStation 4[ /]([\d.]+)/i);
+var isPS4 = match !== null;
+var fwVersion = isPS4 ? match[1] : "Unknown";
+var fwNum = parseFloat(fwVersion);
+
+function onScriptError() {
+    msgs.innerHTML = "Content not Found! - Clear Browser Data and Re-Install Cache ...";
+}
+
+if (!isPS4) {
+    document.addEventListener("DOMContentLoaded", () => {
+        msgs.innerHTML = "Only for PS4 with Firmware 5.05 and 7.00 to 13.52";
+    });
+} else {
+    if (window.applicationCache.status == '0') {
+        if (fwNum == 5.05 || fwNum == 5.07) {
+            window.location.replace("cache505.html");
+        } else if (fwNum >= 7.00 && fwNum <= 8.52) {
+            window.location.replace("cache700.html");
+        } else if (fwNum >= 9.00 && fwNum <= 9.60) {
+            window.location.replace("cache900.html");
+        } else if (fwNum >= 10.00 && fwNum <= 11.02) {
+            window.location.replace("cachecss.html");
+        } else if (fwNum >= 11.50 && fwNum <= 13.52) {
+            window.location.replace("cacheslopkit.html");
+        } else {
+            document.addEventListener("DOMContentLoaded", () => {
+                msgs.innerHTML = 'Unsupported Firmware: <span style="color: red;">' + fwVersion + '</span>';
+            });
+        }
+    } else {
+        if (fwNum == 5.05 || fwNum == 5.07) {
+            var script = document.createElement('script');
+            script.src = "505/exploit.js";
+            script.onerror = onScriptError;
+            document.head.appendChild(script);
+        }
+        else if (fwNum >= 7.00 && fwNum <= 8.52) {
+            var script = document.createElement('script');
+            script.type = 'module';
+            script.src = "700/alert.js";
+            script.onerror = onScriptError;
+            document.head.appendChild(script);
+        }
+        else if (fwNum >= 9.00 && fwNum <= 9.60) {
+            var script = document.createElement('script');
+            script.type = 'module';
+            script.src = "900/alert.js";
+            script.onerror = onScriptError;
+            document.head.appendChild(script);
+        }
+        else if (fwNum >= 10.00 && fwNum <= 11.02) {
+            var script = document.createElement('script');
+            script.src = "css/main.js";
+            script.onerror = onScriptError;
+            script.onload = function () {
+                setTimeout(function () {
+                    doJb();
+                }, 500);
+            };
+            document.head.appendChild(script);
+        }
+        else if (fwNum >= 11.50 && fwNum <= 12.02) {
+            var script = document.createElement('script');
+            script.type = 'module';
+            script.src = "slopkit/chain_lapse.js";
+            script.onerror = onScriptError;
+            document.head.appendChild(script);
+        }
+        else if (fwNum >= 12.50 && fwNum <= 13.00) {
+            var script = document.createElement('script');
+            script.type = 'module';
+            script.src = "slopkit/chain_poops.js";
+            script.onerror = onScriptError;
+            document.head.appendChild(script);
+        }
+        else if (fwNum >= 13.02 && fwNum <= 13.52) {
+            var script = document.createElement('script');
+            script.type = 'module';
+            script.src = "slopkit/jb.js?v=19";
+            script.onerror = onScriptError;
+            document.head.appendChild(script);
+        }
+    }
+}
+</script>
+<div class="status-row"><h2 id="msgs" role="status" aria-live="polite" aria-atomic="true" tabindex="-1">Loading GoldHEN v2.4b18.12... Please Wait</h2><span class="status-chip">ALL FIRMWARE</span></div>
+
+</section>
+<section class="cards" aria-label="Play, snack, repeat">
+<article class="feature-card card-play"><p class="card-kicker">01 / LEVEL UP</p><h2>PlayStation</h2><p>Satu ronde lagi? Ayo.</p><svg viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M13 15h22c5 0 8 5 9 11l3 12c1 5-3 8-7 4l-8-8H16l-8 8c-4 4-8 1-7-4l3-12c1-6 4-11 9-11Z"/><path d="M10 24h10m-5-5v10"/><circle cx="33" cy="22" r="1"/><circle cx="39" cy="28" r="1"/></svg></article>
+<article class="feature-card card-board"><p class="card-kicker">02 / YOUR MOVE</p><h2>Boardgame</h2><p>Giliranmu bikin seru.</p><svg viewBox="0 0 48 48" aria-hidden="true" focusable="false"><rect x="8" y="7" width="33" height="35" rx="8"/><circle cx="17" cy="16" r="1.5"/><circle cx="32" cy="16" r="1.5"/><circle cx="24.5" cy="24.5" r="1.5"/><circle cx="17" cy="33" r="1.5"/><circle cx="32" cy="33" r="1.5"/></svg></article>
+<article class="feature-card card-food"><p class="card-kicker">03 / SNACK BREAK</p><h2>Makanan</h2><p>Teman di setiap ronde.</p><svg viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M8 20c0-8 7-13 16-13s16 5 16 13H8ZM7 28h34M9 35h30c0 7-30 7-30 0ZM9 22l7 4 8-4 8 4 7-4"/></svg></article>
+<article class="feature-card card-drink"><p class="card-kicker">04 / REFRESH</p><h2>Minuman</h2><p>Segar, lanjut main.</p><svg viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M12 17h26l-4 25H16l-4-25ZM9 12h32M14 7h22M28 12l4-10h7M21 23l2 12m5-12-1 12"/></svg></article>
+</section>
+</main>
+<footer class="footer"><span class="footer-label">SPECIAL THANKS</span><span>Dwi Nova Anggoro Putro &amp; Reycia Nextplay</span></footer>
+</div></body>
+</html>
