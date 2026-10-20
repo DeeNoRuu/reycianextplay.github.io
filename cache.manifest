@@ -1,6 +1,6 @@
 CACHE MANIFEST
-# Reycia Nextplay r31 — alternating random menu photo background
-# SHA256: 78c5f0197445fea88cd657574786e18f9e971a7238bb6f16400c595b7c8ca517
+# Reycia Nextplay r32 — wait for completed cache before starting HEN
+# SHA256: 9ec9b5aa646693a9971096d6f4938ebac7adf25f40793db5f43970d972a82d35
 
 CACHE:
 ./
@@ -96,6 +96,7 @@ assets/menu/snack/sosis-mini.png
 assets/reycia-logo-small.png
 assets/reycia-logo.png
 assets/reycia-play.svg
+cache.html
 cache505.html
 cache700.html
 cache900.html
@@ -116,6 +117,7 @@ css/worker.js
 css/workers.js
 food-background.js
 goldhen_2.4b18.12.bin
+hen-launcher.js
 index.html
 offline-cache.js
 slopkit/chain_lapse.js
